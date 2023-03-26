@@ -33,6 +33,7 @@
         <module>examples</module>
         <module>integrations</module>
         <module>miranum-coverage</module>
+        <module>starters</module>
     </modules>
 
     <dependencyManagement>
