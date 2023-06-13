@@ -1,21 +1,22 @@
 package io.miragon.miranum.integrations.example;
 
-import io.miragon.miranum.connect.message.api.MessageApi;
 import io.miragon.miranum.connect.worker.api.WorkerInterceptor;
 import io.miragon.miranum.integrations.example.application.port.in.FireAndForgetUseCase;
 import io.miragon.miranum.integrations.example.application.port.in.SendMessageUseCase;
 import io.miragon.miranum.integrations.example.application.port.out.TenantInterceptor;
 import io.miragon.miranum.integrations.example.application.service.FireAndForgetService;
 import io.miragon.miranum.integrations.example.application.service.SendMessageService;
+import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@AllArgsConstructor
 public class ExampleConfiguration {
 
     @Bean
-    public SendMessageUseCase sendMessageUseCase(final MessageApi messageApi) {
-        return new SendMessageService(messageApi);
+    public SendMessageUseCase sendMessageUseCase() {
+        return new SendMessageService();
     }
 
     @Bean
